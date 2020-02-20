@@ -9,12 +9,26 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <!-- iconos Font Awesome -->
+    <script src="https://kit.fontawesome.com/c918795ee8.js" crossorigin="anonymous"></script>
+
+
+    <title>:: Index|Game ::</title>
   </head>
   <body>
     {% include 'home/navbar.html' %}
     <div class="container">
-        <h1>Piedra, papel o tijera</h1>
+        <h1>Bienvenido</h1>
+        <h3>Al juego piedra <i class="far fa-hand-rock"></i>, papel <i class="far fa-hand-paper"></i>, tijera <i class="far fa-hand-scissors"></i>, lagarto <i class="far fa-hand-lizard"></i> y spock <i class="far fa-hand-spock"></i></h3>
+        <form action="{% url 'index' %}" method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label >Escribe tu nombre</label>
+            <input type="text" name="name" class="form-control mx-sm-3 mb-2" required>
+            <small class="form-text text-muted">No necesariamente debe ser tu nombre real.</small>
+          </div>
+          <input type="submit" value="Jugar" id="button-game" class="btn btn-success btn-lg">
+        </form>
     </div>
 
     <!-- Optional JavaScript -->

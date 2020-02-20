@@ -1,0 +1,86 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- iconos Font Awesome -->
+    <script src="https://kit.fontawesome.com/c918795ee8.js" crossorigin="anonymous"></script>
+
+    <title>:: Play|Game ::</title>
+  </head>
+  <body>
+    {% include 'home/navbar.html' %}
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-6">
+                <h3>{{ name }}</h3>
+                <h3>Puntos <span id="score_gamer">{{score_gamer}}</span></h3>
+                <div align="center" class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Cliclea el cualquier poder para retar a Python Gamer!</h5>
+                        <form action="{% url 'game' %}" method="post">
+                        {% csrf_token %}
+                            <div class="btn-group-vertical">
+                                <div class="input-group">
+                                        <input type="submit" name="piedra" href="#" value="Piedra" class="btn btn-secondary btn-lg">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="far fa-hand-rock"></i></div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="input-group">
+                                        <input type="submit" name="papel" href="#" value="Papel" class="btn btn-success btn-lg">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="far fa-hand-paper"></i></div>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <input type="submit" name="tijera" href="#" value="Tijera" class="btn btn-warning btn-lg">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="far fa-hand-scissors"></i></div>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <input type="submit" name="lagarto" href="#" value="Lagarto" class="btn btn-danger btn-lg">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="far fa-hand-lizard"></i></div>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <input type="submit" name="spock" href="#" value="Spock" class="btn btn-info btn-lg">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="far fa-hand-spock"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-6">
+                <h3>Python Gamer</h3>
+                <h3>Puntos <span id="score_python">{{score_python}}</span></h3>
+                <div align="center" class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <a id="python-name" href="#" class="btn btn-light btn-lg">{{ power_python }} <i class="fab fa-python"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="{% static 'js/game.js' %}"></script>
+</body>
+</html>
