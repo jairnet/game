@@ -1,6 +1,6 @@
 # Juego piedra, papel, tijera, lagarto y spock
 
-Es un sencillo juego donde te enfrestas a restar el random de Python :snake:
+Juego sencillo donde seleccionas un objeto para retar el random de Python :snake:
 
 ## Pasos para correr la aplicacion
 
